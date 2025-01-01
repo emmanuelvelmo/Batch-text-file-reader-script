@@ -15,6 +15,7 @@ for nombre_archivo in os.listdir(ruta_dir):
             # Intenta abrir y leer el contenido del archivo como texto
             with open(ruta_completa, 'r', encoding='utf-8') as archivo:
                 contenido_val = archivo.read()
+                
                 # Si no hay excepción, imprime el nombre y el contenido del archivo
                 print(f"{nombre_archivo}\n")
                 print(contenido_val)
