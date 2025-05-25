@@ -34,7 +34,7 @@ int main()
         catch (const std::exception &e)
         {
             // Si ocurre un error al abrir o leer el archivo, simplemente lo ignoramos
-            return "";
+            continue;
         }
     }
 
