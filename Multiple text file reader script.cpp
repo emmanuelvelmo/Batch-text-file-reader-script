@@ -19,17 +19,25 @@ int main()
         // Archivo y no otro tipo
         if (entrada.is_regular_file())
         {
-            std::ifstream archivo(entrada.path());
-
-            // Verifica si se puede abrir el archivo
-            if (archivo)
+            try
             {
-                std::string contenido_val((std::istreambuf_iterator<char>(archivo)), std::istreambuf_iterator<char>());
-
-                // Imprimir el nombre y el contenido del archivo
-                std::cout << entrada.path().filename().string() << "\n\n";
-                std::cout << contenido_val << "\n";
-                std::cout << "------------------------------------\n";
+                std::ifstream archivo(entrada.path());
+    
+                // Verifica si se puede abrir el archivo
+                if (archivo)
+                {
+                    std::string contenido_val((std::istreambuf_iterator<char>(archivo)), std::istreambuf_iterator<char>());
+    
+                    // Imprimir el nombre y el contenido del archivo
+                    std::cout << entrada.path().filename().string() << "\n\n";
+                    std::cout << contenido_val << "\n";
+                    std::cout << "------------------------------------\n";
+                }
+            }
+            catch (const std::exception &e)
+            {
+                // Si ocurre un error al abrir o leer el archivo, simplemente lo ignoramos
+                continue;
             }
         }
     }
