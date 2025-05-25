@@ -16,8 +16,7 @@ int main()
     // Recorrer todos los archivos en la carpeta
     for (const std::filesystem::directory_entry &entrada : std::filesystem::directory_iterator(ruta_dir))
     {
-        // Verifica si es un archivo regular
-        if (entrada.is_regular_file())
+        try
         {
             std::ifstream archivo(entrada.path());
 
@@ -31,6 +30,11 @@ int main()
                 std::cout << contenido_val << "\n";
                 std::cout << "------------------------------------\n";
             }
+        }
+        catch (const std::exception &e)
+        {
+            // Si ocurre un error al abrir o leer el archivo, simplemente lo ignoramos
+            return "";
         }
     }
 
