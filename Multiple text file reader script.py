@@ -3,7 +3,12 @@ import os
 # Lista de codificaciones a probar (en orden de prioridad)
 codificaciones_txt = ['utf-8', 'latin-1', 'utf-16', 'cp1252']
 
-ruta_dir = input("Enter directory: ")
+while True:
+    ruta_dir = input("Enter directory: ")
+    
+    # Verificar si el directorio existe
+    if os.path.exists(ruta_dir):
+        break
 
 print("\n------------------------------------")
 
