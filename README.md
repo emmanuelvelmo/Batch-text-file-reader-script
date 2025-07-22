@@ -1,4 +1,4 @@
-# Multiple text file reader script
+# Batch text file reader script
 a simple tool that displays the contents of all text files in a directory at once saving you from opening each file individually when searching for specific information particularly useful for programmers who need to quickly scan through multiple code or text files without the hassle of manual file navigation.
 
 <p align="left">
